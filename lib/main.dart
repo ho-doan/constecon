@@ -32,7 +32,6 @@ void main() {
     //   fatal: true,
     // );
   });
-  runApp(const App());
 }
 
 Future<void> initApp() async {

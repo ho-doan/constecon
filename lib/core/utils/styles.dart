@@ -61,7 +61,9 @@ extension VTextStyle on TextStyle {
         wordSpacing: wordSpacing,
         textBaseline: textBaseline,
         height:
-            height != null ? height.sf.textHeight(fontSize ?? 14.sf) : height,
+            // height != null ? height.sf.textHeight(fontSize ?? 14.sf) : height,
+            (height ?? this.height ?? this.fontSize ?? this.fontSize ?? 14)
+                .textHeight(fontSize ?? this.fontSize ?? 14),
         leadingDistribution: leadingDistribution,
         locale: locale,
         foreground: foreground,

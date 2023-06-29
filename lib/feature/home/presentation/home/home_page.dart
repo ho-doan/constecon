@@ -2,7 +2,10 @@ import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../core/common/widgets/bar/base_app_bar.dart';
+import '../../../../core/common/widgets/button/icon_button.dart';
 import '../../../../core/common/widgets/dialog/loading.dart';
+import '../../../../core/common/widgets/layout/adaptive/adaptive_layout.dart';
 import '../../../../core/common/widgets/toast/toast.dart';
 import '../../../../core/generator/colors.gen.dart';
 import '../../../../core/services/di/service_locator.dart';
@@ -74,37 +77,25 @@ class _HomePageState extends State<HomePage> {
               );
             case HomeSuccess():
               return Scaffold(
-                appBar: AppBar(
-                  leading: Center(
-                    child: GestureDetector(
-                      onTap: () => Navigator.of(context).pop(),
-                      child: Icon(
-                        Icons.keyboard_backspace_outlined,
-                        size: 24.sf,
-                      ),
-                    ),
-                  ),
-                  backgroundColor: AppColors.white,
-                  centerTitle: true,
-                  title: Text(
-                    'Home'.hardcode,
-                    style: AppTextStyle.normal.cp(
-                      height: 0,
-                      fontSize: 16.sf,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                  elevation: 8,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.sf),
-                  ),
-                  shadowColor: AppColors.black.withOpacity(.2),
-                ),
+                appBar: const BaseAppBar(),
                 backgroundColor: Colors.white,
                 body: Padding(
                   padding: EdgeInsets.all(19.sf).copyWith(top: 16.sf),
                   child: Column(
                     children: [
+                      Adaptive(
+                        builder: (t) => Row(
+                          children: [
+                            IconButtonBase(
+                              callback: () {},
+                            ),
+                            IconButtonBase(
+                              type: IconButtonType.right,
+                              callback: () {},
+                            ),
+                          ],
+                        ),
+                      ),
                       Text(
                         'constecon.lib.feature.home.presentation.home'.hardcode,
                         style: AppTextStyle.normal.cp(
