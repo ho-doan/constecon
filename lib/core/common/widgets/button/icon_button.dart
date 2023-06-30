@@ -28,8 +28,8 @@ class IconButtonBase extends StatelessWidget {
       child: Stack(children: [
         if (type.isLeft)
           Assets.icon.backBg.svg(
-            width: 86,
-            height: 86,
+            width: 60,
+            height: 60,
             colorFilter: const ColorFilter.mode(
               AppColors.mediumTurquoise,
               BlendMode.srcIn,
@@ -37,8 +37,8 @@ class IconButtonBase extends StatelessWidget {
           )
         else
           Assets.icon.nextBg.svg(
-            width: 86,
-            height: 86,
+            width: 60,
+            height: 60,
             colorFilter: const ColorFilter.mode(
               AppColors.ceruleanBlue,
               BlendMode.srcIn,

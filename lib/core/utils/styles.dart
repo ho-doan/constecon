@@ -45,7 +45,6 @@ extension VTextStyle on TextStyle {
     TextDecorationStyle? decorationStyle,
     double? decorationThickness,
     String? debugLabel,
-    String? fontFamily,
     List<String>? fontFamilyFallback,
     String? package,
     TextOverflow? overflow,
@@ -76,10 +75,6 @@ extension VTextStyle on TextStyle {
         decorationStyle: decorationStyle,
         decorationThickness: decorationThickness,
         debugLabel: debugLabel,
-        // fontFamily: fontFamily ??
-        //     (fontWeight == FontWeight.w700
-        //         ? FontFamily.beVietNamProBold
-        //         : FontFamily.beVietNamPro),
         fontFamilyFallback: fontFamilyFallback,
         package: package,
         overflow: overflow,

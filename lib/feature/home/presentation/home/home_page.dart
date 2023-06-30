@@ -7,6 +7,7 @@ import '../../../../core/common/widgets/button/icon_button.dart';
 import '../../../../core/common/widgets/dialog/loading.dart';
 import '../../../../core/common/widgets/layout/adaptive/adaptive_layout.dart';
 import '../../../../core/common/widgets/toast/toast.dart';
+import '../../../../core/generator/assets.gen.dart';
 import '../../../../core/generator/colors.gen.dart';
 import '../../../../core/services/di/service_locator.dart';
 import '../../../../core/utils/extensions.dart';
@@ -83,19 +84,7 @@ class _HomePageState extends State<HomePage> {
                   padding: EdgeInsets.all(19.sf).copyWith(top: 16.sf),
                   child: Column(
                     children: [
-                      Adaptive(
-                        builder: (t) => Row(
-                          children: [
-                            IconButtonBase(
-                              callback: () {},
-                            ),
-                            IconButtonBase(
-                              type: IconButtonType.right,
-                              callback: () {},
-                            ),
-                          ],
-                        ),
-                      ),
+                      const Section(),
                       Text(
                         'constecon.lib.feature.home.presentation.home'.hardcode,
                         style: AppTextStyle.normal.cp(
@@ -111,6 +100,69 @@ class _HomePageState extends State<HomePage> {
           }
           return Container();
         },
+      ),
+    );
+  }
+}
+
+class Section extends StatelessWidget {
+  const Section({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Adaptive(
+      builder: (t) => Container(
+        color: Color(0xFF16315E),
+        child: Row(
+          children: [
+            Expanded(
+              flex: 3,
+              child: Padding(
+                padding: const EdgeInsets.only(left: 10),
+                child: Text(
+                  'TIN MỚI NHẤT'.hardcode,
+                  style: AppTextStyle.normal.cp(
+                    color: Colors.white,
+                    fontSize: 30.24,
+                    fontWeight: FontWeight.w400,
+                    height: 30.24,
+                  ),
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ),
+            ),
+            IconButtonBase(
+              callback: () {},
+            ),
+            IconButtonBase(
+              type: IconButtonType.right,
+              callback: () {},
+            ),
+            Expanded(
+              flex: 7,
+              child: Row(
+                children: [
+                  10.horizontal,
+                  Expanded(
+                    child: Text(
+                      'Tiểu ban ESG chính thức ra mắt logo MỚI',
+                      style: AppTextStyle.normal.cp(
+                        color: Colors.white,
+                        fontSize: 20,
+                        fontWeight: FontWeight.w500,
+                        height: 24,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ),
+                  ),
+                  Assets.icon.back.svg(),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
