@@ -20,8 +20,22 @@ class $AssetsIconGen {
   /// File path: assets/icon/back.svg
   SvgGenImage get back => const SvgGenImage('assets/icon/back.svg');
 
+  /// File path: assets/icon/background_intro.svg
+  SvgGenImage get backgroundIntro =>
+      const SvgGenImage('assets/icon/background_intro.svg');
+
+  /// File path: assets/icon/building.svg
+  SvgGenImage get building => const SvgGenImage('assets/icon/building.svg');
+
+  /// File path: assets/icon/ic_more.svg
+  SvgGenImage get icMore => const SvgGenImage('assets/icon/ic_more.svg');
+
   /// File path: assets/icon/logo.svg
   SvgGenImage get logo => const SvgGenImage('assets/icon/logo.svg');
+
+  /// File path: assets/icon/logo_grid.png
+  AssetGenImage get logoGrid =>
+      const AssetGenImage('assets/icon/logo_grid.png');
 
   /// File path: assets/icon/next-bg.svg
   SvgGenImage get nextBg => const SvgGenImage('assets/icon/next-bg.svg');
@@ -32,18 +46,66 @@ class $AssetsIconGen {
   /// File path: assets/icon/option.svg
   SvgGenImage get option => const SvgGenImage('assets/icon/option.svg');
 
+  /// File path: assets/icon/point.png
+  AssetGenImage get point => const AssetGenImage('assets/icon/point.png');
+
   /// File path: assets/icon/search.svg
   SvgGenImage get search => const SvgGenImage('assets/icon/search.svg');
 
   /// List of all assets
-  List<SvgGenImage> get values =>
-      [backBg, back, logo, nextBg, next, option, search];
+  List<dynamic> get values => [
+        backBg,
+        back,
+        backgroundIntro,
+        building,
+        icMore,
+        logo,
+        logoGrid,
+        nextBg,
+        next,
+        option,
+        point,
+        search
+      ];
+}
+
+class $AssetsImageGen {
+  const $AssetsImageGen();
+
+  /// File path: assets/image/background_grid.png
+  AssetGenImage get backgroundGrid =>
+      const AssetGenImage('assets/image/background_grid.png');
+
+  /// File path: assets/image/elementor-slides-wrapper.png
+  AssetGenImage get elementorSlidesWrapper =>
+      const AssetGenImage('assets/image/elementor-slides-wrapper.png');
+
+  /// File path: assets/image/product-person.png
+  AssetGenImage get productPerson =>
+      const AssetGenImage('assets/image/product-person.png');
+
+  /// File path: assets/image/product.png
+  AssetGenImage get product => const AssetGenImage('assets/image/product.png');
+
+  /// File path: assets/image/product_some_person.png
+  AssetGenImage get productSomePerson =>
+      const AssetGenImage('assets/image/product_some_person.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [
+        backgroundGrid,
+        elementorSlidesWrapper,
+        productPerson,
+        product,
+        productSomePerson
+      ];
 }
 
 class Assets {
   Assets._();
 
   static const $AssetsIconGen icon = $AssetsIconGen();
+  static const $AssetsImageGen image = $AssetsImageGen();
 }
 
 class AssetGenImage {

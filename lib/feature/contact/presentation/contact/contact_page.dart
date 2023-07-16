@@ -90,7 +90,6 @@ class _ContactPageState extends State<ContactPage> {
                     'Contact'.hardcode,
                     style: AppTextStyle.normal.cp(
                       height: 0,
-                      fontSize: 16.sf,
                       fontWeight: FontWeight.w600,
                     ),
                   ),
@@ -111,7 +110,6 @@ class _ContactPageState extends State<ContactPage> {
                         style: AppTextStyle.normal.cp(
                           color: AppColors.primary300,
                           fontWeight: FontWeight.w700,
-                          fontSize: 14.sf,
                         ),
                       ),
                     ],

@@ -1,5 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+
+import '../generator/colors.gen.dart';
 export 'package:flutter_gen/gen_l10n/s.dart';
 
 class SizeUntil {
@@ -105,6 +107,16 @@ extension ExceptionCustomization on Exception {
 extension SB on num {
   Widget get vertical => SizedBox(
         height: toDouble(),
+      );
+  Widget horizontalLine(BuildContext context) => Container(
+        height: toDouble(),
+        width: context.appSize.width,
+        color: AppColors.indigo.withOpacity(.15),
+      );
+  Widget verticalLine(BuildContext context) => Container(
+        width: toDouble(),
+        height: context.appSize.height,
+        color: AppColors.indigo.withOpacity(.15),
       );
   Widget get horizontal => SizedBox(
         width: toDouble(),

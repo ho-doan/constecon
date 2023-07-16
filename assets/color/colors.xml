@@ -9,5 +9,9 @@
   <color name="rainbow">#16315E</color>
   <color name="mediumTurquoise">#5FD1C1</color>
   <color name="ceruleanBlue">#264ABC</color>
+  <color name="pictonBlue">#4CB3F8</color>
+  <color name="ceruleanBlue">#264ABC</color>
+  <color name="fireOpal">#E86042</color>
+  <color name="bigFootFeet">#EF8563</color>
   <color name="red" type="material">#CF2A2A</color>
 </resources>

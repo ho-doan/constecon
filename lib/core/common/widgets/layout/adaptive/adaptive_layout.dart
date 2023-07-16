@@ -6,7 +6,7 @@ enum XLayout {
 }
 
 typedef TCallback = T Function<T>();
-typedef TLayout = Widget Function(XLayout);
+typedef TLayout = Widget Function(XLayout, BoxConstraints);
 
 extension XLayoutX on XLayout {
   bool get isWeb => this == XLayout.web;
@@ -34,6 +34,19 @@ extension XLayoutX on XLayout {
         return onWeb();
     }
   }
+
+  T whenGrid<T>({
+    required List<T> value,
+    required T Function(List<T>) onWeb,
+    required T Function(List<T>) onMobile,
+  }) {
+    switch (this) {
+      case XLayout.mobile:
+        return onMobile(value);
+      case XLayout.web:
+        return onWeb(value);
+    }
+  }
 }
 
 extension NumX on num {
@@ -58,9 +71,7 @@ class Adaptive extends StatelessWidget {
     return LayoutBuilder(
       builder: (context, constraints) => AnimatedContainer(
         duration: const Duration(milliseconds: 250),
-        child: builder(
-          constraints.maxWidth.layout,
-        ),
+        child: builder(constraints.maxWidth.layout, constraints),
       ),
     );
   }

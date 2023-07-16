@@ -6,6 +6,7 @@ import '../../../generator/colors.gen.dart';
 import '../../../utils/extensions.dart';
 import '../../../utils/styles.dart';
 import '../dialog/loading.dart';
+import '../layout/adaptive/adaptive_layout.dart';
 
 class ToastWidget {
   ToastWidget._();
@@ -15,6 +16,7 @@ class ToastWidget {
   void showToast(
     String message, {
     Color? messageColor,
+    XLayout? t,
     Color? backgroundColor,
     int? seconds,
     String? icon,
@@ -35,6 +37,7 @@ class ToastWidget {
           child: Material(
             type: MaterialType.transparency,
             child: BuildBodyWidget(
+              t: t ?? XLayout.mobile,
               message: message,
               backgroundColor: backgroundColor,
               messageColor: messageColor,
@@ -76,7 +79,8 @@ class BuildBodyWidget extends StatefulWidget {
       this.child,
       this.icon,
       this.style,
-      this.seconds});
+      this.seconds,
+      required this.t});
   final Color? messageColor;
   final Color? backgroundColor;
   final int? seconds;
@@ -84,6 +88,7 @@ class BuildBodyWidget extends StatefulWidget {
   final String? icon;
   final Widget? child;
   final TextStyle? style;
+  final XLayout t;
   @override
   State<BuildBodyWidget> createState() => _BuildBodyWidgetState();
 }

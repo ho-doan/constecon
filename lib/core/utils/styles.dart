@@ -9,15 +9,15 @@ class AppTextStyle {
         // fontFamily: FontFamily.beVietNamPro,
         color: AppColors.primaryColor,
         fontStyle: FontStyle.normal,
-        fontSize: 16.sf,
+        fontSize: 16,
         fontWeight: FontWeight.w400,
-        height: 28.sf.textHeight(16.sf),
+        height: 28.textHeight(16),
       );
 
   static TextStyle get normal => _baseTextStyle.copyWith(
         color: AppColors.neutralGreenColor,
-        fontSize: 14.sf,
-        height: 24.sf.textHeight(14.sf),
+        fontSize: 14,
+        height: 24.textHeight(14),
       );
 }
 
@@ -26,7 +26,6 @@ extension VTextStyle on TextStyle {
     bool? inherit,
     Color? color,
     Color? backgroundColor,
-    double? fontSize,
     FontWeight? fontWeight,
     FontStyle? fontStyle,
     double? letterSpacing,
@@ -59,10 +58,9 @@ extension VTextStyle on TextStyle {
         letterSpacing: letterSpacing,
         wordSpacing: wordSpacing,
         textBaseline: textBaseline,
-        height:
-            // height != null ? height.sf.textHeight(fontSize ?? 14.sf) : height,
-            (height ?? this.height ?? this.fontSize ?? this.fontSize ?? 14)
-                .textHeight(fontSize ?? this.fontSize ?? 14),
+        height: height != null ? 0 : null,
+        // height != null ? height.sf.textHeight(fontSize ?? 14.sf) : height,
+        // (this.height ?? fontSize ?? 14).textHeight(fontSize ?? 14),
         leadingDistribution: leadingDistribution,
         locale: locale,
         foreground: foreground,
@@ -79,4 +77,5 @@ extension VTextStyle on TextStyle {
         package: package,
         overflow: overflow,
       );
+  TextStyle get rmHeight => copyWith(height: 0);
 }
